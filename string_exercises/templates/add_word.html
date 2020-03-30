@@ -1,0 +1,26 @@
+{% extends 'layout.html' %}
+{% block content %}
+    <div class="content-section col-md-12">
+        <form method="post" action="" id="add-word">
+            {{ form.hidden_tag() }}
+
+            {{ form.word.label() }}
+            {{ form.word() }}
+            <br/>
+            {{ form.category.label() }}
+            {{ form.category() }}
+            <br/>
+            {{ form.submit() }}
+        </form>
+    </div>
+    <h2>OR</h2>
+    <p>Upload From File</p>
+    <form action="/uploader" method="POST"
+          enctype="multipart/form-data">
+        Category: <input type="text" name="category"/>
+        <br/>
+        <input type="file" name="file"/>
+        <br/>
+        <input type="submit"/>
+    </form>
+{% endblock %}

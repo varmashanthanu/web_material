@@ -1,0 +1,86 @@
+{% extends 'layout.html' %}
+{% block content %}
+    <h5>Instructions</h5>
+    <p>Unscramble the following set of words to get the keys from each. Unscramble the keys to answer the final question.</p>
+    <small><a href="/play_game/{{ game['id'] }}">shareable link</a></small>
+    <div id="words">
+        {% for i, word in game['scrambled_words'] %}
+
+            <span class="scrambled-word;{{ game['words'][i] }}" id="sw_{{ i }}">
+                <span class="jumbled_word_part">{{ word }}</span>
+{#                {% for l in word %}#}
+                    <span class="answer_field_part"><input class="single-letter" id="word_{{ i }}"/></span>
+{#                {% endfor %}#}
+            </span>
+            <span class="check_button" id="cb_{{ i }}">CHECK</span>
+            <span class="keys" id="keys_{{ i }}" style="display: none">
+                {% for j, key in game['key_letters'][i] %}
+                    <span class="single-letters-keys">{{ key }}</span>
+                {% endfor %}
+            </span>
+            <br/><br/>
+        {% endfor %}
+    </div>
+    <div id="question">
+        <span>FINAL QUESTION:</span><br/>
+        <span id="question_location">{{ game['question'] }}</span>
+    </div>
+    <div class="sw_final-answer;{{ game['answer'] }}" id="sw_final-answer">
+        {% for l in game['answer'] %}
+            {% if l == ' ' %}
+                &nbsp;&nbsp;
+            {% elif l.isalpha() %}
+                _
+            {% else %}
+                {{ l }}
+            {% endif %}
+        {% endfor %}
+        <span><input class="final-answer" id="word_final-answer"/></span>
+        <span class="check_button" id="cb_final-answer">CHECK</span>
+    </div>
+    <div class="final-answer-shown" id="final-answer-shown" style="display: none">
+        <span>{{ game['answer'] }}</span>
+    </div>
+    <audio id="winAudio">
+        <source src="/static/audio/can_can_song.mp3">
+    </audio>
+    <img class="dancing-gif" id="dancing-gif" src="/static/site_images/dancing_ruffles.gif" style="display: none"/>
+{% endblock %}
+{% block scripts %}
+    <script>
+        $('.check_button').on('click', function (e) {
+            var id_num = this.id.split('_')[1];
+            console.log(id_num);
+            answer = document.getElementById('sw_' + id_num).className.split(';')[1].toUpperCase();
+            console.log(answer);
+            {#word = $('#word_'+id_num);#}
+            word = document.getElementById('word_' + id_num).value.toUpperCase();
+            console.log(word);
+            console.log(answer);
+            if (word === answer) {
+                this.style.color = 'darkgreen';
+                this.style.borderColor = 'darkgreen';
+                if (id_num === 'final-answer') {
+                    $('#sw_final-answer').fadeOut();
+                    $('.final-answer-shown').fadeIn();
+                    if (answer === "WILL YOU MARRY ME?") {
+                        $('#winAudio').get(0).play();
+                        console.log('audio started now');
+                        setTimeout(showDancing, 11550)
+                    }
+                } else {
+                    document.getElementById('keys_' + id_num).style.display = 'inline';
+                }
+            } else {
+                this.style.color = 'red';
+                this.style.borderColor = 'red';
+            }
+
+
+        });
+
+        function showDancing() {
+            $('#dancing-gif').show()
+        }
+    </script>
+{% endblock %}

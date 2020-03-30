@@ -1,0 +1,23 @@
+{% extends 'layout.html' %}
+{% block content %}
+    <h1>Welcome to Jumble!</h1>
+    <h3>Instructions</h3>
+    <p>
+        <h4>Play</h4>
+        <ol>
+            <li>Hit "Create Puzzle"</li>
+            <li>Enter the Question (The clue)</li>
+            <li>Enter the Answer (The final scrambled word)</li>
+            <li>Select a Difficulty (Affects the length of each word to unscramble)</li>
+            <li>Share the link for the puzzle!</li>
+        </ol>
+        <h4>Add Words</h4>
+        <ol>
+            <li>You can add custom words to the dictionary to pick from</li>
+            <li>Currently, the puzzle picks from a collection of nearly 2k generic words</li>
+            <li>Always specify the Category of the words being added</li>
+            <li>You can add words from CSV file that contains a column of words with the column title "Word" (Exact Match)</li>
+            <li>On the next release, you can select the category of words to pick your puzzle from</li>
+        </ol>
+    </p>
+{% endblock %}

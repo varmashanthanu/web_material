@@ -1,0 +1,21 @@
+{% extends 'layout.html' %}
+{% block content %}
+    <div class="content-section col-md-12">
+        {% if form %}
+            <form method="post" action="" id="add-word">
+                {{ form.hidden_tag() }}
+
+                {{ form.question.label() }}
+                {{ form.question() }}
+
+                {{ form.answer.label() }}
+                {{ form.answer() }}
+
+                {{ form.difficulty.label() }}
+                {{ form.difficulty() }}
+
+                {{ form.submit() }}
+            </form>
+        {% endif %}
+    </div>
+{% endblock %}

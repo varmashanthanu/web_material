@@ -1,0 +1,255 @@
+body {
+    background: #eae5fa;
+    color: #030603;
+    margin-top: 5rem;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: #6800ec;
+}
+
+.page-not-found-image {
+    width: 100%;
+    margin-bottom: 25px;
+}
+
+.jumbled_word_part {
+    width: 150px;
+    letter-spacing: 5px;
+    display: inline-block;
+    text-align: right;
+}
+
+.answer_field_part {
+
+}
+
+.alert-message {
+    top: 0;
+    left: 0;
+    right: 0;
+    position: fixed;
+    background-color: #3A7734;
+    color: #D3E7E9;
+    z-index: 900000;
+    text-align: center;
+}
+
+.single-letter {
+    width: 300px;
+    text-transform: uppercase;
+}
+
+.final-answer {
+    display: block;
+    width: 400px;
+    text-transform: uppercase;
+
+}
+
+.dancing-gif {
+    height: 600px;
+    left: 50%;
+    margin-top: -300px;
+    margin-left: -500px;
+    position: absolute;
+    top: 50%;
+    width: 1000px;
+}
+
+.final-answer-shown {
+    color: darkgreen;
+    font-size: 3em;
+}
+
+.scrambled-word {
+    padding: 10px;
+    height: 60px;
+}
+
+.check_button {
+    font-size: small;
+    border: 1px solid black;
+    border-radius: 3px;
+    padding: 1px;
+    cursor: pointer;
+}
+
+.keys {
+    padding-left: 5px;
+    color: darkgreen;
+    width: 30px;
+}
+
+.single-letters-keys {
+    /*border: darkgreen solid 2px;*/
+    font-size: 1.5em;
+    width: 30px;
+}
+
+
+.bg-steel {
+    background-color: #49008a;
+}
+
+.site-header .navbar-nav .nav-link {
+    color: #cbd5db;
+}
+
+.site-header .navbar-nav .nav-link:hover {
+    color: #ffffff;
+}
+
+.site-header .navbar-nav .nav-link.active {
+    font-weight: 500;
+}
+
+.content-section {
+    background: #ffffff;
+    padding: 10px 20px;
+    border: 1px solid #dddddd;
+    border-radius: 3px;
+    margin-bottom: 20px;
+}
+
+.article-title {
+    color: #444444;
+}
+
+a.article-title:hover {
+    color: #428bca;
+    text-decoration: none;
+}
+
+.article-content {
+    white-space: pre-line;
+}
+
+.article-img {
+    height: 65px;
+    width: 65px;
+    margin-right: 16px;
+}
+
+.article-metadata {
+    padding-bottom: 1px;
+    margin-bottom: 4px;
+    border-bottom: 1px solid #e3e3e3
+}
+
+.article-metadata a:hover {
+    color: #333;
+    text-decoration: none;
+}
+
+.article-svg {
+    width: 25px;
+    height: 25px;
+    vertical-align: middle;
+}
+
+.account-img {
+    height: 125px;
+    width: 125px;
+    margin-right: 20px;
+    margin-bottom: 16px;
+}
+
+.account-heading {
+    font-size: 2.5rem;
+}
+
+/* Custom Formatting for certain sections */
+.form-fields {
+    display: inline;
+    padding-right: 1rem;
+    position: relative;
+}
+
+.field-value-small {
+    border-radius: 5px;
+    color: #495057;
+    -webkit-appearance: menulist;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    padding-left: 5px;
+}
+
+.field-label {
+    padding-right: 0.5rem;
+}
+
+.field-value-big {
+}
+
+.field-value-drop-area {
+    border-radius: 5px;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    padding-left: 5px;
+    height: auto;
+    overflow-x: scroll;
+    width: 100%;
+    vertical-align: top;
+}
+
+.submit-btn {
+    display: inline;
+}
+
+.invalid-input-fields {
+    border-color: red;
+}
+
+.invalid-fields-feedback {
+    position: absolute;
+    font-size: 0.75rem;
+    color: red;
+    top: 1.5rem;
+    left: 0.5rem;
+    display: inline;
+    z-index: 100;
+}
+
+.loadingspinner {
+    pointer-events: none;
+    position: fixed;
+    /* visibility: hidden; */
+    display: none;
+    top: 50%;
+    left: 50%;
+    width: 2.5em;
+    height: 2.5em;
+    border: 0.4em solid transparent;
+    border-color: #eee;
+    border-top-color: #3E67EC;
+    border-radius: 50%;
+    animation: loadingspin 1s linear infinite;
+}
+
+@keyframes loadingspin {
+    100% {
+        transform: rotate(360deg)
+    }
+}
+
+.data-table {
+    overflow: scroll;
+    height: 400px;
+    max-width: 100%;
+}
+
+table {
+    border-radius: 3px;
+    border: solid #dddddd 1px;
+    background-color: white;
+}
+
+th, td {
+    border: solid #dddddd 1px;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+}
